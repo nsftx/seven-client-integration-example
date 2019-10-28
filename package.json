@@ -1,0 +1,16 @@
+{
+  "name": "seven-widget-nsoft-example",
+  "version": "1.0.0",
+  "private": false,
+  "main": "wc.js",
+  "scripts": {
+    "build": "mkdir -p dist && cp wc.js dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "author": "miletic.dinko@nsoft.com",
+  "license": "ISC",
+  "description": "Example Seven client widget that outpus Keno ticket details"
+}

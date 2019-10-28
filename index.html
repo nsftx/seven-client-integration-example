@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <style>
+            body {
+                background: white;
+            }
+        </style>
+        <script src="wc.js"></script>
+    </head>
+    <body>
+        <h1>Hello from integration</h1>
+        <seven-widget-keno-ticket-details>
+        </seven-widget-keno-ticket-details>
+        <script>
+            const value = {"id":"1310WKEG1","requestUuid":"80b64144-a219-402e-aa47-c19949746b50","createdAt":"2019-10-18 13:29:55","ticketDateTime":1571405395000,"ticketDateTimeUTC":1571398195000,"status":{"id":"4","value":"LOST","name":"lost"},"product":"Keno","payin":1,"payinTax":0,"bet":1,"winnings":0,"payoutTax":0,"possiblePayout":0,"possiblePayoutTax":0,"payout":0,"maxPossibleWin":500,"maxPossiblePayoutTax":0,"maxPossiblePayout":0,"bets":[{"amount":1,"winnings":0,"status":{"id":"4","value":"LOST","name":"lost"},"type":6,"possibleWin":500,"value":[7,13,26,63,66,76],"eventId":400,"productVersion":"1.0.0","tax":0,"bet":{"id":6,"title":"Spot 6"},"outcome":{"value":[7,13,26,63,66,76],"title":"UNKNOWN","drawn":[7,13]},"eventDateTime":1571405414000,"eventDateTimeUTC":1571398214000}],"betshopId":"f22d9639-25b3-4ccc-a19f-2673d072a80b","betshopName":"PF - BuhaTer","cpvUuid":"3b26bb68-8a5c-45b1-b197-2a3f6316c15e"};
+            const el = document.getElementsByTagName("seven-widget-keno-ticket-details")[0];
+            el.setAttribute("version",1);
+            el.setAttribute("translations", JSON.stringify({
+                "game":"Game",
+                "ticketId":"Ticket ID",
+                "stake":"Stake",
+                "winnings":"Winnings",
+                "payout":"Payout",
+                "status":"Status",
+                "type":"Type",
+                "event":"Event",
+                "bet":"Bet",
+                "payin":"Payment",
+                "payoutTax":"Payment tax"}));
+            el.setAttribute("currency", JSON.stringify({
+                displayValue: 'EUR'
+            }));
+            el.setAttribute("ticket", JSON.stringify(value));
+        </script>
+    </body>
+</html>
