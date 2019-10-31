@@ -1,6 +1,6 @@
 {
   "name": "seven-widget-nsoft-example",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "main": "wc.js",
   "scripts": {
