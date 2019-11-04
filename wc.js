@@ -6,19 +6,19 @@
       this.attachShadow({mode: 'open'});
     }
   
-    static get observedAttributes() { return ['ticket', 'translations', 'currency']; }
+    static get observedAttributes() { return ['load-data']; }
   
   
     attributeChangedCallback(attr, oldVal, newVal) {
+      let data = null;
       console.info('[Keno.TicketDetials] TicketDetials attribute changed:', attr)
       console.info('[Keno.TicketDetials] TicketDetials old value:', oldVal);
       console.info('[Keno.TicketDetials] TicketDetials: new value', newVal);
-      if (this.getAttribute('ticket') 
-          && this.getAttribute('currency')
-          && this.getAttribute('translations')) {
-        this.shadowRoot.innerHTML = this.compile(JSON.parse(this.getAttribute('ticket')), {
-          translations: JSON.parse(this.getAttribute('translations')),
-          currency: JSON.parse(this.getAttribute('currency'))
+      if (this.getAttribute('load-data')) {
+        data = JSON.parse(this.getAttribute('load-data'));
+        this.shadowRoot.innerHTML = this.compile(data.ticket, {
+          translations: data.translations,
+          currency: data.currency
         });
       }
     }
