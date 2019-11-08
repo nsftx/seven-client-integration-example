@@ -20,6 +20,22 @@
           translations: data.translations,
           currency: data.currency
         });
+        // show actions
+        window.postMessage({
+          action: 'Tickets.ShowPreview',
+          msgSender: 'Slave',
+          slaveId: 'Keno',
+          data: {
+            actions: {
+              rebet:{
+                active: true
+              },
+              cancel:{
+                active: false
+              }
+            }
+          }
+        }, window.document.origin);
       }
     }
   
